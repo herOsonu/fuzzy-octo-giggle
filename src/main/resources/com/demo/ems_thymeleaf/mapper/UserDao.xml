@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.ems_thymeleaf.dao.UserDao">
+
+    <insert id="save">
+        INSERT INTO t_uer values(#{id},#{username},#{realname},#{password},#{sex});
+    </insert>
+
+    <select id="login" resultType="User">
+        select id,username,realname,password,sex from t_uer where username=#{username} and password=#{password};
+    </select>
+</mapper>

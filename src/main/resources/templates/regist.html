@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>LogIn Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+    <legend>Regist Page</legend>
+</fieldset>
+
+<ul class="layui-nav">
+    <li class="layui-nav-item">
+        <a href="">HOME</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">Popular</a>
+    </li>
+    <li class="layui-nav-item" lay-unselect="">
+        <a href="javascript:;" ><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">修改信息</a></dd>
+            <dd><a href="javascript:;">安全管理</a></dd>
+            <dd><a href="javascript:;">退了</a></dd>
+        </dl>
+    </li>
+</ul>
+<div style="margin-top: 15px;">
+
+    <!-- 示例-970 -->
+    <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
+</div>
+<div style="padding: 20px; background-color: #F2F2F2;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+            <div class="layui-card" style="background-color: wheat">
+                <div class="layui-card-header">用户注册</div>
+                <div class="layui-card-body">
+
+                    <form class="layui-form" th:action="@{/user/register}" method="post">
+                        <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">用户名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="username"  autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">真实姓名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="realname"  autocomplete="off" class="layui-input" >
+                            </div>
+                        </div>
+                        <br>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="password"  autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">单选框</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="sex" value="男" title="男">
+                                <input type="radio" name="sex" value="女" title="女" checked>
+                            </div>
+                        </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">验证码</label>
+                                <div class="layui-input-block">
+                                    <img id="code"  th:src="@{/user/code}">
+                                    <a href="javascript:;" onclick="changeCode()">看不清，请点击</a>
+                                    <script>
+                                        function changeCode() {
+                                            document.getElementById("code").src="/ems/user/code?"+new Date().getTime();
+                                        }
+                                    </script>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="code"  autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="*">立即注册</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+
+    });
+</script>
+</body>
+</html>
