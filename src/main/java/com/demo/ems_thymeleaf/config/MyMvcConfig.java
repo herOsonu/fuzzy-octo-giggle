@@ -1,6 +1,6 @@
 package com.demo.ems_thymeleaf.config;
 
-import com.demo.ems_thymeleaf.inceptor.LoginHandlerInterceptor;
+import com.demo.ems_thymeleaf.interceptor.LoginHandlerInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -22,11 +22,11 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
 
     //注册拦截器
-    /*@Override
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/login","/empList2");
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/","/login","/user/login");
 
-    }*/
+    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

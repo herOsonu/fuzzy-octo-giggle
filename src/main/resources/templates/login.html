@@ -63,7 +63,8 @@
                         </div>
                     </div>
                     </form>
-                    </div>
+                    <p style="color: red" th:text="${#httpServletRequest.getParameter('msg')}" th:if="${not #strings.isEmpty('msg')}"></p>
+                </div>
                 </div>
             </div>
         </div>
